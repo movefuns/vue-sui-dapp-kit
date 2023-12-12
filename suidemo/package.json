@@ -10,8 +10,10 @@
   "dependencies": {
     "@mysten/dapp-kit": "^0.10.2",
     "@mysten/sui.js": "^0.48.0",
+    "@mysten/wallet-standard": "^0.8.11",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vuiet": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

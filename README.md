@@ -67,6 +67,37 @@ vue-sui-dapp-kit
 运行界面后点击按钮获得测试币  
 ![测试Faucet通过](./suidemodoc/testgetFaucet.jpg)
 
+******
+* 安装 @mysten/wallet-standard  
+```
+npm i @mysten/wallet-standard
+```
+
+* 安装 vuiet  
+```
+npm install -S vuiet
+```
+* 贴入界面代码  
+```
+    <p @click="$wallet.disconnect()">Address: {{ $wallet.address }}</p>
+    <p>Balance: {{ balance }}</p>
+    <WalletMultiButton />
+
+```
+
+* Script代码  
+```
+<script setup>
+  import { useWallet, useCoinBalance,WalletMultiButton } from 'vuiet'
+  const $wallet = useWallet()
+  const { balance } = useCoinBalance()
+</script>
+```
+
+最后获得画面链接钱包成功  
+![连接钱包成功](./suidemodoc/suiwalletButton.jpg)
+
+
 
 * 接着让我们愉快的推进吧  
-* 未完待续...  
+

@@ -7,6 +7,10 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
+    <p @click="$wallet.disconnect()">Address: {{ $wallet.address }}</p>
+    <p>Balance: {{ balance }}</p>
+    <WalletMultiButton />
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -30,6 +34,13 @@
     </ul>
   </div>
 </template>
+
+<script setup>
+  import { useWallet, useCoinBalance,WalletMultiButton } from 'vuiet'
+  const $wallet = useWallet()
+  const { balance } = useCoinBalance()
+
+</script>
 
 <script>
 
