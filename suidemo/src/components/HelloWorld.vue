@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click="handleClick">Faucet</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,11 +32,29 @@
 </template>
 
 <script>
+
+// import { ConnectButton, useCurrentAccount } from "@mysten/dapp-kit";//不可用
+import { getFaucetHost, requestSuiFromFaucetV0 } from '@mysten/sui.js/faucet';
+
 export default {
+  
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data(){
+
+  },
+  methods:{
+    handleClick(){
+      requestSuiFromFaucetV0({
+        host: getFaucetHost('devnet'),
+        recipient: '0x73cc0ae26d786e8664ad129ecf9dd6df263fa57b198b0db5074780ce43e58bb9',
+      });
+      console.log("Faucet Press !");
+    }
   }
+
 }
 </script>
 

@@ -36,6 +36,38 @@ vue-sui-dapp-kit
 * 将 http://localhost:8080/ 填入浏览器后将看到效果,说明本地vue已经搭建成功  
 ![本地页面](./suidemodoc/stepOver.jpg)
 
+* 安装sui.js
+```
+    npm i @mysten/sui.js
+```
+
+* 安装dapp-kit (~~不可行因为dapp-kit是react的库~~)
+```
+    npm i --save @mysten/dapp-kit
+```
+
+* 测试sui.js中的 Faucet 函数来获取测试币
+首先在demo中添加代码  
+```
+  methods:{
+    handleClick(){
+      requestSuiFromFaucetV0({
+        host: getFaucetHost('devnet'),
+        recipient: '0x73cc0ae26d786e8664ad129ecf9dd6df263fa57b198b0db5074780ce43e58bb9',
+      });
+      console.log("Faucet Press !");
+    }
+  }
+
+```
+在界面里添加按钮响应  
+```
+<button @click="handleClick">Faucet</button>
+```
+运行界面后点击按钮获得测试币  
+![测试Faucet通过](./suidemodoc/testgetFaucet.jpg)
+
+
 * 接着让我们愉快的推进吧  
 * 未完待续...  
 
