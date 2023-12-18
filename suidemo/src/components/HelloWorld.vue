@@ -1,37 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="handleClick">Faucet</button>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <p @click="$wallet.disconnect()">Address: {{ $wallet.address }}</p>
-    <p>Balance: {{ balance }}</p>
-    <WalletMultiButton />
+    <button class="faucetbt" @click="handleClick">Faucet</button>
 
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <p @click="$wallet.disconnect()">Address: {{ $wallet.address }}</p>
+    <p>Balance: {{ balance / 1000000000 }}</p>
+    <p style="text-align: center;margin-left: 820px;">
+      <WalletMultiButton />
+    </p>
+
   </div>
 </template>
 
@@ -85,4 +62,23 @@ li {
 a {
   color: #42b983;
 }
+    .faucetbt {  
+      background-color: #4CAF50; /* 按钮的背景颜色 */  
+      border: none; /* 移除边框 */  
+      color: white; /* 文本颜色 */  
+      padding: 10px 20px; /* 内边距 */  
+      text-align: center; /* 文本居中 */  
+      text-decoration: none; /* 移除下划线 */  
+      display: inline-block; /* 使按钮保持在一行 */  
+      font-size: 16px; /* 字体大小 */  
+      border-radius: 4px; /* 边框圆角 */  
+      transition-duration: 0.4s; /* 过渡效果 */  
+      cursor: pointer; /* 鼠标悬停时的光标样式 */  
+    }  
+  
+    .faucetbt:hover {  
+      background-color: #45a049; /* 鼠标悬停时的背景颜色 */  
+      color: white; /* 鼠标悬停时的文本颜色 */  
+    }  
+
 </style>

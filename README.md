@@ -97,6 +97,8 @@ npm install -S vuiet
 最后获得画面链接钱包成功  
 ![连接钱包成功](./suidemodoc/suiwalletButton.jpg)
 
+最后的最后,去掉一些无关紧要的页面内容,突出demo实现的水龙头按钮和钱包按钮
+![成果图](./suidemodoc/demoOver.jpg)
 
 
 * 接着让我们愉快的推进吧  
